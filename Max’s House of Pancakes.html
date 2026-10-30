@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Max’s House of Pancakes | Breakfast all day in downtown Jackson, MI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2b2118;--paper:#faf6ee;--wash:#efe6d3;--butter:#cab694;--syrup:#7a5a2e;--line:#d9ceb4;--card:#fff;--navy:#2b2118;
+--display:"Bowlby One","Arial Black",Impact,sans-serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#f4ece0;--paper:#1f1a14;--wash:#2b241b;--line:#4a3f2e;--card:#262019;color-scheme:dark}}
+:root[data-theme="dark"]{--ink:#f4ece0;--paper:#1f1a14;--wash:#2b241b;--line:#4a3f2e;--card:#262019;color-scheme:dark}
+html{scroll-padding-top:calc(76px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:30}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:25;background:var(--paper);border-bottom:3px solid var(--ink)}
+header .wrap{display:flex;align-items:center;gap:20px;height:66px}
+.logo{font:400 19px/1 var(--display);text-decoration:none;margin-right:auto}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;font-weight:700;font-size:15px}
+nav a:hover{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--butter)}
+.btn{display:inline-block;background:var(--butter);color:var(--navy);border:3px solid var(--ink);border-radius:999px;padding:11px 24px;font:700 16px var(--body);text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.alt{background:var(--card);color:var(--ink)}
+:focus-visible{outline:3px solid var(--syrup);outline-offset:3px}
+.hero{background:var(--butter);color:var(--navy);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 45%,rgba(255,255,255,.55) 0 28%,transparent 29%),radial-gradient(circle at 12% 110%,rgba(122,90,46,.2) 0 22%,transparent 23%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;padding-top:50px;padding-bottom:50px}
+.hero h1{font-size:clamp(40px,6.8vw,80px);margin-bottom:18px;letter-spacing:-.5px}
+.hero p{font-size:20px;max-width:28em;margin:0 0 26px}
+.hero .btn{border-color:var(--navy);box-shadow:4px 4px 0 var(--navy);background:var(--navy);color:var(--butter)}
+.hero .btn.alt{background:#fff;color:var(--navy)}
+.status{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--navy);border:3px solid var(--navy);border-radius:999px;padding:7px 16px;font-weight:700;font-size:15px;margin-bottom:22px}
+.dot{width:12px;height:12px;border-radius:50%;background:#9aa0b5}
+.status.open .dot{background:#1fa856}.status.last .dot{background:#e08a00}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.art{width:min(460px,100%);margin:0 auto;display:block;overflow:visible}
+.drip{transform-box:fill-box;transform-origin:50% 0;animation:drip 1.4s .3s cubic-bezier(.3,1.3,.5,1) both}
+@keyframes drip{from{transform:scaleY(.15)}}
+.badge{transform-origin:330px 80px;animation:wob 5s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(7deg)}}
+.check{height:18px;background:repeating-conic-gradient(var(--navy) 0 25%,var(--butter) 0 50%) 0 0/36px 36px;border-block:3px solid var(--navy);box-sizing:content-box}
+.ticker{background:var(--navy);color:var(--butter);overflow:hidden;white-space:nowrap;font:400 18px/1 var(--display);padding:15px 0}
+.ticker div{display:inline-block;animation:tk 32s linear infinite}
+.ticker span{margin:0 18px}
+@keyframes tk{to{transform:translateX(-50%)}}
+.strip{background:var(--wash);border-bottom:3px solid var(--ink)}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:22px;padding-bottom:22px}
+.strip b{display:block;font-size:13px;color:var(--syrup);letter-spacing:.2px}
+.strip span{font-weight:500}
+section{padding:70px 0}
+section h2{font-size:clamp(30px,4.8vw,50px);margin-bottom:12px}
+.lede{max-width:36em;margin:0 0 30px;opacity:.85;font-size:18px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{background:var(--card);color:var(--ink);border:3px solid var(--ink);border-radius:20px;padding:20px 18px;text-align:left;cursor:pointer;box-shadow:5px 5px 0 var(--ink);font:inherit;transition:transform .12s,box-shadow .12s}
+.tile:nth-child(odd){background:var(--wash)}
+.tile:hover{transform:translate(-2px,-3px) rotate(-1deg);box-shadow:8px 8px 0 var(--ink)}
+.tile i{display:block;font-style:normal;font-size:44px;line-height:1;margin-bottom:12px}
+.tile b{display:block;font:400 19px/1.1 var(--display)}
+.tile span{font-size:14px;opacity:.8}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px}
+.chip{border:3px solid var(--ink);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 15px;font:700 14px var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--butter);color:var(--navy)}
+.search{flex:1;min-width:200px;border:3px solid var(--ink);border-radius:999px;padding:10px 18px;background:var(--card);color:var(--ink);font:400 16px var(--body)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+.item{background:var(--card);border:3px solid var(--ink);border-radius:16px;padding:16px 18px;display:flex;gap:14px;box-shadow:4px 4px 0 var(--ink)}
+.item em{font-style:normal;font-size:32px;line-height:1;flex:none;width:52px;height:52px;display:grid;place-items:center;background:var(--wash);border:2px solid var(--ink);border-radius:14px}
+.item .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.item h3{font:700 17px/1.25 var(--body)}
+.price{font-weight:700;background:var(--butter);color:var(--navy);border:2px solid var(--ink);border-radius:999px;padding:0 10px;font-size:14px;white-space:nowrap}
+.item p{margin:4px 0 0;font-size:15px;opacity:.8}
+.tag{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;background:var(--wash);border:1px solid var(--line);border-radius:6px;padding:1px 8px}
+.empty{padding:30px;border:3px dashed var(--line);border-radius:14px;text-align:center}
+.note{font-size:14px;opacity:.75;margin:22px 0}
+.alt-bg{background:var(--wash);border-block:3px solid var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+table{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);border:3px solid var(--ink);border-radius:16px;overflow:hidden;box-shadow:5px 5px 0 var(--ink)}
+td,th{padding:11px 16px;text-align:left;border-bottom:1px solid var(--line)}
+tr:last-child td,tr:last-child th{border-bottom:0}
+tr.today{background:var(--butter);color:var(--navy);font-weight:700}
+details{background:var(--card);border:3px solid var(--ink);border-radius:14px;padding:14px 18px;margin-bottom:12px}
+summary{font-weight:700;cursor:pointer}
+details p{margin:8px 0 0}
+.card{background:var(--card);border:3px solid var(--ink);border-radius:20px;padding:28px;box-shadow:5px 5px 0 var(--ink)}
+form{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+form input{flex:1;min-width:200px;border:3px solid var(--ink);border-radius:999px;padding:11px 18px;background:var(--paper);color:var(--ink);font:400 16px var(--body)}
+.ok{margin-top:12px;font-weight:700}
+footer{background:var(--navy);color:#faf6ee;padding:36px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--butter)}
+.bar{display:none}
+@media (max-width:760px){
+nav a:not(.btn){display:none}
+.hero .wrap,.two,.strip .wrap{grid-template-columns:1fr}
+.art{width:min(300px,80%);order:-1}
+.tiles{grid-template-columns:1fr 1fr}
+section{padding:48px 0}
+body{padding-bottom:78px}
+.bar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:25;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:var(--paper);border-top:3px solid var(--ink)}
+.bar .btn{flex:1;text-align:center;padding:12px 8px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker div,.badge,.drip{animation:none}.btn:hover,.tile:hover{transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top">Max’s House of Pancakes</a>
+<nav aria-label="Main"><a href="#menu">Menu</a><a href="#visit">Visit</a><a href="#groups">Groups</a><a href="#faq">FAQ</a></nav>
+<a class="btn" href="https://ahopmi.com/pages/order-online">Order online</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<div class="status" id="status" role="status"><span class="dot"></span><span id="statusText">Checking hours…</span></div>
+<h1>Pancakes stacked high. Served all day.</h1>
+<p>Fluffy pancakes, loaded skillets and half-pound burgers in the heart of downtown Jackson. Breakfast and lunch are both on from open to close.</p>
+<div class="cta"><a class="btn" href="https://ahopmi.com/pages/order-online">Order online</a><a class="btn alt" href="#menu">See the menu</a></div>
+</div>
+<svg class="art" viewBox="0 0 400 380" role="img" aria-label="Illustration of a stack of pancakes with butter and syrup">
+<g fill="none" stroke="#2b2118" stroke-width="5" stroke-linecap="round" opacity=".45"><path d="M150 120q-14-16 0-32t0-32"/><path d="M200 112q-14-16 0-32t0-32"/><path d="M250 120q-14-16 0-32t0-32"/></g>
+<ellipse cx="200" cy="312" rx="178" ry="40" fill="#fff" stroke="#2b2118" stroke-width="5"/>
+<ellipse cx="200" cy="312" rx="130" ry="26" fill="#f1ebdd" stroke="#2b2118" stroke-width="3"/>
+<g stroke="#2b2118" stroke-width="5" stroke-linejoin="round">
+<path d="M62 280v26a138 32 0 0 0 276 0v-26z" fill="#d58f33"/><ellipse cx="200" cy="280" rx="138" ry="32" fill="#efb55c"/>
+<path d="M66 240v26a134 31 0 0 0 268 0v-26z" fill="#d58f33"/><ellipse cx="200" cy="240" rx="134" ry="31" fill="#efb55c"/>
+<path d="M70 200v26a130 30 0 0 0 260 0v-26z" fill="#d58f33"/><ellipse cx="200" cy="200" rx="130" ry="30" fill="#efb55c"/>
+<g class="drip"><path d="M92 202c0-34 216-34 216 0 0 14-12 14-14 40-2 20-18 20-20 2-1-12-14-14-20-6-26 10-80 10-106 0-8 14-12 22-14 40-2 18-20 18-20-2 0-20-22-22-22-74z" fill="#7a5a2e"/></g>
+<rect x="168" y="150" width="62" height="34" rx="6" fill="#f3d97a" transform="rotate(-8 199 167)"/>
+</g>
+<g class="badge"><circle cx="330" cy="80" r="58" fill="#2b2118"/><circle cx="330" cy="80" r="50" fill="none" stroke="#cab694" stroke-width="2" stroke-dasharray="3 5"/>
+<text x="330" y="78" text-anchor="middle" fill="#cab694" font-size="25" style="font-family:var(--display)">ALL DAY</text>
+<text x="330" y="100" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" style="font-family:var(--body)">breakfast + lunch</text></g>
+</svg>
+</div></div>
+<div class="check"></div>
+<div class="ticker" aria-hidden="true"><div id="tk"></div></div>
+
+<div class="strip"><div class="wrap">
+<div><b>Find us</b><span>133 W Michigan Ave, Suite C, Jackson, MI 49201</span></div>
+<div><b>Parking</b><span>Inside the Jackson Public Parking Lot, right at the door</span></div>
+<div><b>Today’s deals</b><span><a href="https://ahopmi.com/collections/daily-specials">See the daily specials</a></span></div>
+</div></div>
+
+<section><div class="wrap">
+<h2>What are you craving?</h2>
+<p class="lede">Pick one and we’ll jump you to the menu.</p>
+<div class="tiles" id="tiles"></div>
+</div></section>
+
+<section class="alt-bg" id="menu"><div class="wrap">
+<h2>The menu</h2>
+<p class="lede">Filter by category, search for a dish, or show only meatless plates.</p>
+<div class="tools" id="chips" role="group" aria-label="Menu categories"></div>
+<div class="tools"><input class="search" id="q" type="search" placeholder="Search the menu (try “pecan” or “gyro”)" aria-label="Search the menu"><button class="chip" id="meatless" aria-pressed="false">Meatless only</button></div>
+<div class="grid" id="grid" aria-live="polite"></div>
+<p class="note">Omelettes come with hash browns and your choice of toast or pancakes. Burgers and most sandwiches come with fries, and sandwiches include a cup of soup. Prices match the current online menu and can change. Please tell us about any allergies when you order.</p>
+<a class="btn" href="https://ahopmi.com/pages/order-online">Order online</a>
+</div></section>
+
+<section id="visit"><div class="wrap two">
+<div>
+<h2>Hours and directions</h2>
+<p class="lede">We stop taking orders one hour before closing, so come early if you’re cutting it close.</p>
+<table id="hours" aria-label="Opening hours">
+<tr data-d="1"><th>Monday</th><td>8 AM – 5 PM</td></tr>
+<tr data-d="2"><th>Tuesday</th><td>8 AM – 5 PM</td></tr>
+<tr data-d="3"><th>Wednesday</th><td>8 AM – 5 PM</td></tr>
+<tr data-d="4"><th>Thursday</th><td>8 AM – 6 PM</td></tr>
+<tr data-d="5"><th>Friday</th><td>8 AM – 6 PM</td></tr>
+<tr data-d="6"><th>Saturday</th><td>8 AM – 6 PM</td></tr>
+<tr data-d="0"><th>Sunday</th><td>8 AM – 3 PM</td></tr>
+</table>
+</div>
+<div class="card" style="align-self:start">
+<h3 style="font-size:26px;margin-bottom:12px">Max’s House of Pancakes</h3>
+<p style="margin:0 0 6px">133 W Michigan Ave, Suite C<br>Jackson, MI 49201</p>
+<p style="margin:0 0 20px;opacity:.8">Inside the Jackson Public Parking Lot, off Michigan Ave.</p>
+<div class="cta"><a class="btn" href="https://goo.gl/maps/NFGXXxvYypGkmLYB8">Get directions</a><a class="btn alt" href="https://ahopmi.com/pages/order-online">Order ahead</a></div>
+</div>
+</div></section>
+
+<section class="alt-bg" id="groups"><div class="wrap two">
+<div>
+<h2>Feeding a group?</h2>
+<p class="lede">Office breakfast, a team after practice, a family weekend. Tell us the headcount and the day and we’ll help you plan it.</p>
+</div>
+<div class="card">
+<h3 style="font-size:26px">Join the VIP list</h3>
+<p style="margin:8px 0 0">Get the daily special and new menu items by email. No spam.</p>
+<form id="vip"><input type="email" required placeholder="you@email.com" aria-label="Email address"><button class="btn" type="submit">Join</button></form>
+<div class="ok" id="vipok" role="status"></div>
+</div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<h2>Good to know</h2>
+<p class="lede">The quick answers.</p>
+<div style="max-width:720px">
+<details><summary>Is breakfast served all day?</summary><p>Yes. Breakfast and lunch are both available from open to close.</p></details>
+<details><summary>Where do I park?</summary><p>We’re inside the Jackson Public Parking Lot at 133 W Michigan Ave, Suite C.</p></details>
+<details><summary>What’s the last time I can order?</summary><p>We stop taking orders one hour before closing. Check today’s hours above.</p></details>
+<details><summary>Can I order ahead?</summary><p>Yes. Use Order online to place your order from your phone before you arrive.</p></details>
+<details><summary>Are you the old Ana’s House of Pancakes?</summary><p>Yes. We’re now Max’s House of Pancakes, with the same breakfast favorites and more on the way.</p></details>
+</div>
+<p style="margin-top:26px"><a class="btn" href="https://goo.gl/maps/NFGXXxvYypGkmLYB8">Leave us a 5-star review</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div>© 2026 Max’s House of Pancakes · 133 W Michigan Ave, Suite C, Jackson, MI</div>
+<div><a href="https://ahopmi.com/pages/order-online">Order online</a> · <a href="https://ahopmi.com/collections/daily-specials">Daily specials</a></div>
+</div></footer>
+<div class="bar"><a class="btn" href="https://ahopmi.com/pages/order-online">Order online</a><a class="btn alt" href="https://goo.gl/maps/NFGXXxvYypGkmLYB8">Directions</a></div>
+
+<script>
+const RAW=`Pancakes|Short stack (3)|6.99|Three buttermilk pancakes.|m
+Pancakes|Buttermilk pancakes (4)|8.99|Four fluffy buttermilk pancakes.|m
+Pancakes|Max’s Pancakes|10.25|Topped with glazed strawberries, blueberries, cinnamon apples, bananas or peaches.|m
+Pancakes|Pecan pancakes (4)|10.25|Four pancakes topped with pecans.|m
+Pancakes|Chocolate chip pancakes (4)|10.25|Four pancakes loaded with chocolate chips.|m
+Pancakes|Fruity Pebbles pancakes (4)|10.50|Four pancakes with Fruity Pebbles.|m
+Crepes & waffles|Max’s Crepes|10.99|Choice of glazed strawberries, blueberries, cinnamon apples, bananas or peaches.|m
+Crepes & waffles|Mascarpone crepes|11.50|Filled with a mascarpone cheese blend.|m
+Crepes & waffles|Plain crepes|9.50|Simple and light.|m
+Crepes & waffles|Max’s Waffle|10.25|Choice of glazed strawberries, blueberries, cinnamon apples, bananas or peaches.|m
+Crepes & waffles|Bacon waffle|9.75|Waffle with bacon.|
+Crepes & waffles|Pecan waffle|10.25|Waffle topped with pecans.|m
+French toast|Plain French toast|9.25|The classic.|m
+French toast|Crunchy French toast|10.25|Crisp outside, soft inside.|m
+French toast|Max’s French Toast|10.75|Choice of glazed fruit topping.|m
+French toast|Stuffed French toast|12.99|Stuffed with a mascarpone blend and topped with fruit.|m
+Omelettes|Cheese omelette|9.99|Hash browns and toast or pancakes.|m
+Omelettes|Ham & cheese omelette|11.75|Hash browns and toast or pancakes.|
+Omelettes|Denver omelette|12.25|Green pepper, onion and diced ham.|
+Omelettes|Spinach & feta omelette|11.99|Hash browns and toast or pancakes.|m
+Omelettes|Veggie omelette|12.50|Spinach, tomato, green pepper, onion and mushroom.|m
+Omelettes|Meat Lover’s omelette|13.25|Chorizo, ham, sausage, bacon, tomato, onion and cheese.|
+Eggs & skillets|Two eggs any style|9.50|Hash browns, toast, pancakes or French toast, and your choice of meat.|
+Eggs & skillets|Country Style Breakfast|9.75|Biscuits and gravy topped with two eggs any style.|
+Eggs & skillets|Hobo skillet|9.99|Hash browns, cheddar and two eggs any style.|m
+Eggs & skillets|Gypsy skillet|12.50|Hash browns, onion, pepper, mushroom, ham, cheddar and two eggs.|
+Eggs & skillets|Veggie skillet|12.50|Hash browns, spinach, tomato, pepper, onion, mushroom, cheese and two eggs.|m
+Eggs & skillets|Country fried steak skillet|12.99|Hash browns, veggies, country fried steak, sausage gravy and two eggs.|
+Eggs & skillets|Gyro skillet|12.50|Hash browns, onion, pepper, gyro meat, cheddar and two eggs.|
+Burgers|Hamburger|11.99|Half-pound charbroiled patty with lettuce, tomato and pickles. Fries included.|
+Burgers|Cheeseburger|12.75|Half-pound charbroiled patty with your choice of cheese. Fries included.|
+Burgers|Bacon cheeseburger|13.75|Two pieces of bacon, cheese, lettuce, tomato and onion.|
+Burgers|Mushroom & Swiss burger|13.75|Sautéed mushrooms and Swiss.|
+Burgers|Hickory burger|13.99|Bacon, mushroom, cheddar and BBQ sauce. Fries included.|
+Burgers|Patty melt|13.99|On grilled rye with American cheese and grilled onion.|
+Sandwiches|French dip|13.25|Sliced roast beef, mozzarella and au jus. Soup, pickles and fries.|
+Sandwiches|Philadelphia beef|13.75|Beef with mozzarella, pepper, onion and mushroom.|
+Sandwiches|Monte Cristo|13.75|French toast sandwich with ham, turkey and Swiss.|
+Sandwiches|Gyro on pita|13.25|Tomato, onion and tzatziki.|
+Sandwiches|Reuben|13.25|Corned beef, sauerkraut, Swiss and Thousand Island on rye.|
+Sandwiches|Chicken cordon bleu panini|13.75|Grilled chicken breast with ham and Swiss.|
+Sandwiches|Turkey club|13.50|Triple decker with soup or fries.|
+Sandwiches|BLT club|11.50|Triple decker with soup or fries.|
+Sides & drinks|Hash browns|3.99||m
+Sides & drinks|Bacon|3.99||
+Sides & drinks|Biscuits & country gravy|6.99||
+Sides & drinks|French fries|3.75||m
+Sides & drinks|Bowl of soup|5.75||
+Sides & drinks|Fresh ground coffee|2.49||m
+Sides & drinks|Fresh juice and soda|2.49||m`;
+const ITEMS=RAW.split("\n").map(l=>{const [c,n,p,d,m]=l.split("|");return{c,n,p:+p,d,m:!!m}});
+const CATS=["All",...new Set(ITEMS.map(i=>i.c))];
+const EMO={"Pancakes":"🥞","Crepes & waffles":"🧇","French toast":"🍞","Omelettes":"🍳","Eggs & skillets":"🥓","Burgers":"🍔","Sandwiches":"🥪","Sides & drinks":"☕"};
+const TILES=[["Something sweet","Pancakes","Pancakes"],["Crepes & waffles","Light and golden","Crepes & waffles"],["French toast","Plain to stuffed","French toast"],["Omelettes","Fluffy, with hash browns","Omelettes"],["Eggs & skillets","Hearty and hot","Eggs & skillets"],["Burgers","Half-pound patties","Burgers"],["Sandwiches","Served with sides","Sandwiches"],["Sides & drinks","Coffee, juice, soda","Sides & drinks"]];
+let cat="All",meat=false;
+const $=s=>document.querySelector(s);
+$("#tk").innerHTML=[0,1].map(()=>Object.keys(EMO).map(k=>"<span>"+EMO[k]+" "+k+"</span>").join("")).join("");
+const chips=$("#chips");
+function pick(c){cat=c;[...chips.children].forEach(x=>x.setAttribute("aria-pressed",x.textContent===c));draw()}
+CATS.forEach(c=>{const b=document.createElement("button");b.className="chip";b.textContent=c;b.setAttribute("aria-pressed",c===cat);b.onclick=()=>pick(c);chips.append(b)});
+TILES.forEach(([t,s,c])=>{const b=document.createElement("button");b.className="tile";b.innerHTML="<i>"+EMO[c]+"</i><b></b><span></span>";b.querySelector("b").textContent=t;b.querySelector("span").textContent=s;b.onclick=()=>{pick(c);$("#menu").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})};$("#tiles").append(b)});
+$("#q").oninput=draw;
+$("#meatless").onclick=e=>{meat=!meat;e.target.setAttribute("aria-pressed",meat);draw()};
+function draw(){
+ const q=$("#q").value.trim().toLowerCase();
+ const list=ITEMS.filter(i=>(cat==="All"||i.c===cat)&&(!meat||i.m)&&(!q||(i.n+" "+i.d).toLowerCase().includes(q)));
+ const g=$("#grid");g.innerHTML="";
+ if(!list.length){g.innerHTML='<div class="empty">Nothing matches that. Try another word or clear the filters.</div>';return}
+ list.forEach(i=>{const a=document.createElement("article");a.className="item";
+  a.innerHTML='<em>'+EMO[i.c]+'</em><div style="flex:1"><div class="top"><h3></h3><span class="price">$'+i.p.toFixed(2)+'</span></div>'+(i.d?'<p></p>':'')+(i.m?'<span class="tag">Meatless</span>':'')+'</div>';
+  a.querySelector("h3").textContent=i.n;if(i.d)a.querySelector("p").textContent=i.d;g.append(a)});
+}
+draw();
+const H={0:[8,15],1:[8,17],2:[8,17],3:[8,17],4:[8,18],5:[8,18],6:[8,18]};
+const fmt=m=>{let h=Math.floor(m/60),mm=m%60,ap=h>=12?"PM":"AM";h=h%12||12;return h+(mm?":"+String(mm).padStart(2,"0"):"")+" "+ap};
+function tick(){
+ const p=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:"America/Detroit",weekday:"short",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+ const d=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.weekday),now=(+p.hour)*60+(+p.minute),[o,c]=H[d],s=$("#status"),t=$("#statusText");
+ document.querySelectorAll("#hours tr").forEach(r=>r.classList.toggle("today",+r.dataset.d===d));
+ s.className="status";
+ if(now>=o*60&&now<c*60-60){s.classList.add("open");t.textContent="Open now. Taking orders until "+fmt(c*60-60)}
+ else if(now>=o*60&&now<c*60){s.classList.add("last");t.textContent="Kitchen closed to new orders. Doors close at "+fmt(c*60)}
+ else if(now<o*60){t.textContent="Closed. Opens today at "+fmt(o*60)}
+ else{t.textContent="Closed. Opens tomorrow at "+fmt(H[(d+1)%7][0]*60)}
+}
+tick();setInterval(tick,60000);
+$("#vip").onsubmit=e=>{e.preventDefault();$("#vipok").textContent="You’re on the list. Watch your inbox for the next special.";e.target.reset()};
+</script>
+</body>
+</html>
